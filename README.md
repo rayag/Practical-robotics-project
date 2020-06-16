@@ -1,1 +1,1 @@
-Folder containing files related to the course project.
+Folder containing files and documentation related to the course project.
