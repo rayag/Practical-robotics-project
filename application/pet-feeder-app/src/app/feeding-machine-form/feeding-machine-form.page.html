@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/fms"></ion-back-button>
+      <ion-title>{{ isEdit ? "Update" : "Add" }}  feeding machine</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="onSubmit()">
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+          <div class="form-input-block" padding>
+            <ion-item>
+              <ion-input #name="ngModel" type="text" placeholder="Name" [(ngModel)]="feedingMachine.name" name="name" required></ion-input>
+              <div *ngIf="name.invalid && (name.touched || name.dirty)" class="form-error">
+                <div *ngIf="name.errors.required">
+                  Feeding machine name is required.
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-input #ip="ngModel" type="text" pattern="[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}\.[0-9]{0,3}" placeholder="IP address" [(ngModel)]="feedingMachine.ip" name="ip" ></ion-input>
+              <div *ngIf="ip.invalid && (ip.touched || ip.dirty)" class="form-error">
+                <div *ngIf="ip.errors.pattern">
+                  IP address and port are invalid. 
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number"  placeholder="Video port" [(ngModel)]="feedingMachine.videoPort" name="videoPort"></ion-input>
+              <ion-input type="number"  placeholder="Server port" [(ngModel)]="feedingMachine.serverPort" name="videoPort"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="number" name="sleepTime" [(ngModel)]="feedingMachine.sleepTime" placeholder="Time between feed"></ion-input>
+              <ion-select [value]="feedingMachine.intervalType" [(ngModel)]="feedingMachine.intervalType" name="intervalType" cancelText="cancel" okText="Confirm!">
+                <ion-select-option value="MINS">Minutes</ion-select-option>
+                <ion-select-option value="HOURS">Hours</ion-select-option>
+                <ion-select-option value="DAYS" >Days</ion-select-option>
+              </ion-select>
+            </ion-item>
+          </div>
+          <div padding>
+            <ion-button type="submit" size="medium" expand="block" [disabled]="form.invalid">{{ isEdit ? "Update" : "Add" }}</ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+</ion-content>

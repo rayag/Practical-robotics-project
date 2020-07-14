@@ -1,0 +1,25 @@
+.pet-pic {
+    border-radius: 6px;
+    margin: 15px 3% 10px 3%;
+    width: 94%;
+    -webkit-box-shadow: 0 6px 6px -6px #777;
+    -moz-box-shadow: 0 6px 6px -6px #777;
+    box-shadow: 0 6px 6px -6px #777;
+}
+
+.pet-pic > img {
+    border-radius: 6px;
+}
+
+ion-button {
+    --box-shadow: 0px;
+    --background-hover: #C8C8C8;
+}
+
+ion-text div {
+    margin-left: 15px;
+}
+
+ion-icon {
+    margin-right: 5px;
+}

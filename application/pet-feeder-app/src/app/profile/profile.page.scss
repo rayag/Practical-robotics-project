@@ -1,0 +1,28 @@
+ion-avatar {
+    margin-top: 30px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+}
+
+.upload {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 6px 6px 2px 7px;
+    background-color: #F8A052;
+    border-radius: 14px;
+    outline: none;
+}
+
+.upload:active {
+    background-color: #E19048;
+    border: none;
+    outline: none;
+    padding: 7px 7px 3px 8px;
+}
+
+.user-name {
+    margin-top: 66px;
+    font-size: 25px;
+}

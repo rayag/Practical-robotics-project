@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        <div class="form-input-block" padding>
+          <ion-item>
+            <ion-input #email="ngModel" type="text" placeholder="Email" [(ngModel)]="user.email" name="email" required></ion-input>
+            <div *ngIf="email.invalid && (email.touched || email.dirty)" class="form-error">
+              <div *ngIf="email.errors.required">
+                Email is required.
+              </div>
+            </div>
+          </ion-item>
+          <ion-item>
+            <ion-input #password="ngModel" type="password" placeholder="Password" [(ngModel)]="user.password" name="password" required></ion-input>
+            <div *ngIf="password.invalid && (password.touched || password.dirty)" class="form-error">
+              <div *ngIf="password.errors.required">
+                Password is required.
+              </div>
+            </div>
+          </ion-item>
+        </div>
+        <div padding>
+          <ion-button type="submit" size="medium" expand="block" [disabled]="form.invalid">Login</ion-button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</form>
+<ion-card *ngIf="error">
+  <ion-card-content>{{ this.errorMsg }}</ion-card-content>
+</ion-card>
+</ion-content>

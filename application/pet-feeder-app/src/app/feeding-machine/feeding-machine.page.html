@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/tabs/fms"></ion-back-button>
+      <ion-title>{{ feedingMachine ? feedingMachine.name : ""}}</ion-title>
+  </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  <ion-img class="pet-pic" [src]="feedingMachine.photoPath" [alt]="feedingMachine.name"></ion-img>
+  <ion-text>
+    <div> IP: {{ feedingMachine.ip }} </div>
+    <div>Server port: {{ feedingMachine.serverPort }} </div>
+    <div>Camera port: {{ feedingMachine.serverPort }} </div>
+  </ion-text>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" expand="block" (click)="onClickFeed()">Feed</ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button color="light" expand="block" (click)="onClickVideo()">
+          <ion-icon name="videocam-outline"></ion-icon> Live stream
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-card *ngIf="message">
+    <ion-card-content>
+      {{ message }}
+    </ion-card-content>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,6 @@
+model/.vscode/
+model/__pycache__/
+model/dataset/
+model/finalize_dogs_vs_cats/
+model/train/
+model/train.zip

@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Feeding machines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let fm of feedingMachines">
+    <img [src]="fm.photoPath"  (click)="onClick(fm.id)"/>
+    <ion-card-header>
+      <ion-grid>
+        <ion-row>
+          <ion-col size="7">
+            <ion-card-title  (click)="onClick(fm.id)">{{ fm.name }}</ion-card-title>
+          </ion-col>
+          <ion-col>
+            <ion-button shape="round" size="small" color="danger" (click)="presentdeleteconfirm(fm)">
+              <ion-icon name="trash-outline"></ion-icon>
+            </ion-button>
+            <ion-button shape="round" size="small" color="danger" (click)="onClickEdit(fm)">
+              <ion-icon name="settings-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <!-- <ion-col> -->
+          <!-- </ion-col> -->
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+  </ion-card>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button (click)="onClickAdd()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <button (click)="video()">Play  </button>
+</ion-content>
