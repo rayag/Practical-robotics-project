@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-card *ngFor="let fm of feedingMachines">
-    <img [src]="fm.photoPath"  (click)="onClick(fm.id)"/>
+    <img class="pet-img" [src]="fm.photoPath"  (click)="onClick(fm.id)"/>
     <ion-card-header>
       <ion-grid>
         <ion-row>
@@ -21,8 +21,6 @@
               <ion-icon name="settings-outline"></ion-icon>
             </ion-button>
           </ion-col>
-          <!-- <ion-col> -->
-          <!-- </ion-col> -->
         </ion-row>
       </ion-grid>
     </ion-card-header>
@@ -32,5 +30,4 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
   </ion-fab>
-  <button (click)="video()">Play  </button>
 </ion-content>

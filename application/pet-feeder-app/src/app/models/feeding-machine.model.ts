@@ -16,9 +16,13 @@ export class FeedingMachine {
 
     sleepTime: number;
 
-    intervalType: string = "0";
+    intervalType: string = "MINS";
 
     photoPath: string = 'assets/img/dog.jpeg';
 
     videoPort: string;
+
+    isDog: boolean = true;
+
+    isCat: boolean = false;
 }

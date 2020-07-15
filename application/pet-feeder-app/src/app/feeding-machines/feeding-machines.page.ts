@@ -47,7 +47,6 @@ export class FeedingMachinesPage implements OnInit {
   }
 
   public deleteFeedingMachine(id: number) {
-    console.log("1")
     this.deleteClicked = true;
     this.fmServ.delete(id).subscribe(
       (response) => {

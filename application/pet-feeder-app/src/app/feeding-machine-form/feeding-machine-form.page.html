@@ -34,12 +34,23 @@
               <ion-input type="number"  placeholder="Server port" [(ngModel)]="feedingMachine.serverPort" name="videoPort"></ion-input>
             </ion-item>
             <ion-item>
+              <ion-input type="text" placeholder="MAC address of device" [(ngModel)]="feedingMachine.mac" name="mac"></ion-input>
+            </ion-item>
+            <ion-item>
               <ion-input type="number" name="sleepTime" [(ngModel)]="feedingMachine.sleepTime" placeholder="Time between feed"></ion-input>
               <ion-select [value]="feedingMachine.intervalType" [(ngModel)]="feedingMachine.intervalType" name="intervalType" cancelText="cancel" okText="Confirm!">
                 <ion-select-option value="MINS">Minutes</ion-select-option>
                 <ion-select-option value="HOURS">Hours</ion-select-option>
                 <ion-select-option value="DAYS" >Days</ion-select-option>
               </ion-select>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox color="danger" name="isCat" (ionChange)="catCheck()" [(ngModel)]="feedingMachine.isCat" slot="start"></ion-checkbox>
+              <ion-label>Cat</ion-label>
+            </ion-item>
+            <ion-item>
+              <ion-checkbox color="danger" name="isDog" (ionChange)="dogCheck()" [(ngModel)]="feedingMachine.isDog" slot="start"></ion-checkbox>
+              <ion-label>Dog</ion-label>
             </ion-item>
           </div>
           <div padding>

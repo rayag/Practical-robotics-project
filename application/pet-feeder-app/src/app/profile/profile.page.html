@@ -10,7 +10,7 @@
       <ion-col size="5">
         <ion-avatar class="ion-margin-start">
           <img *ngIf="photo" [src]="photo"/>
-          <button shape="round" class="upload">
+          <button shape="round" class="upload" (click)="selectPhoto()">
             <ion-icon name="image-outline"></ion-icon>
           </button>
         </ion-avatar>

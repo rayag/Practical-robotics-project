@@ -27,6 +27,7 @@ export class FeedingMachineFormPage implements OnInit {
   }
 
   onSubmit() {
+    this.feedingMachine.photoPath = this.feedingMachine.isCat ? "assets/img/cat.jpg" : "assets/img/dog.jpeg"
     if (this.isEdit) {
       this.fmServ.updateFeedingMachine(this.feedingMachine);
     } else {
@@ -36,4 +37,11 @@ export class FeedingMachineFormPage implements OnInit {
     this.router.navigate(['tabs/fms']);
   }
 
+  catCheck() {
+    this.feedingMachine.isDog = !this.feedingMachine.isCat;
+  }
+
+  dogCheck() {
+    this.feedingMachine.isCat = !this.feedingMachine.isDog;
+  }
 }
